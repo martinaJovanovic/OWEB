@@ -10,6 +10,7 @@
   <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="lib/animate/animate.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
+  <script src="main.js"></script>
 </head>
 
 <body>
@@ -18,13 +19,11 @@
   Header
   ============================-->
   <header id="header">
-    <div class="container">
-
       <div id="logo">
         <a href="#doma"></a><img src="img/MJ.png" alt="" title="" width="65px" height="45px"/></img></a>
       </div>
 
-      <nav id="nav-menu-container">
+      <nav id="nav-menu">
         <ul class="nav-menu">
           <li class="menu-active"><a href="#doma">Дома</a></li>
           <li><a href="#about">За мене</a></li>
@@ -37,7 +36,7 @@
               <li><a href="#hrana">Храна</a></li>
             </ul>
           </li>
-          <li><a href="#contact">Контакт</a></li>
+          <li style="margin-right: 100px;"><a href="#contact">Контакт</a></li>
         </ul>
       </nav>
     </div>
@@ -47,7 +46,7 @@
     Doma 
   ============================-->
   <section id="doma">
-    <div class="doma-container">
+    <div class="doma">
       
       <div class="box">
         <img src="img/martina.png" alt="" class="box-img"> 
@@ -71,7 +70,7 @@
       Za mene
     ============================-->
     <section id="about">
-      <div class="container">
+
         <div class="row about-container">
 
           <div class="col-lg-6 content order-lg-1 order-2">
@@ -114,46 +113,179 @@
     <section id="gallery">
         <div class="section-header">
           <h3 class="section-title">Галерија</h3> 
-          <p class="section-description">Мини Инстаграм</p>       
+          <p class="section-description">Мини Инстаграм</p> 
+          <h3 style="text-align: center;">Додадете слика</h3>
+          <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
+          <div style = "text-align: center; font-size: 30pt; color:  #2dc997;"><label for="file" style="cursor: pointer;"><i class="fa fa-upload"></i></label></div>
+          <p style="text-align: center;"><img id="slika" width="650" height="450"/></p> 
+          <script>
+          var loadFile = function(event) {
+	          var image = document.getElementById('slika');
+	          image.src = URL.createObjectURL(event.target.files[0]);
+            };
+          </script>
+          
           <div class="row justify-content-center">
-            
-            <figure class="gallery-img"><a href="img/gallery1.jpg"><img src="img/gallery1.jpg" width="250px" height="150px"></img></a>
-              <figcaption><h2 style="margin-top: 2%;"><i class="fa fa-heart"></i><i class="fa fa-comment"></i></h2>
-              </figcaption>
+            <figure class="gallery-img"><a href="img/gallery1.jpg"><img src="img/gallery1.jpg" width="965px" height="650px"></img></a>
               </figure>
-
-            <figure class="gallery-img"><a href="img/gallery2.jpg"><img src="img/gallery2.jpg" width="200px" height="150px"></img></a>
-              <figcaption><h2 style="margin-top: 2%;"><i class="fa fa-heart"></i><i class="fa fa-comment"></i></h2></figcaption>
-            </figure>
-
-            <figure class="gallery-img"><a href="img/gallery3.jpg"><img src="img/gallery3.jpg" width="250px" height="150px"></img></a>
-              <figcaption><h2 style="margin-top: 2%;"><i class="fa fa-heart"></i><i class="fa fa-comment"></i></h2></figcaption>
+              <section id="komentari">
+                <div class="container">
+                  <div class="box-com">
+                    <i class="fa fa-thumbs-up" id="like"></i>
+                    <span id="like-counter">0</span>
+                  </div>
+                  <div class="box-com">
+                    <i class="fa fa-heart" id="love"></i>
+                    <span id="love-counter">0</span>
+                  </div>
+                  <div class="box-com">
+                    <i class="fa fa-comment"></i>
+                    <span id="comment-counter">0</span>
+                  </div>
+                  <div class="box-com">
+                    <input type="text" placeholder="Напишете коментар..." id="comment" style="font-size: 14px;">
+                    <button class="add-comment" style="border: none;"><i class="fa fa-send"></i></button>
+                  </div>
+                  <section class="comments" id="comments-container"></section>
+                </div>
+              </section>
+              <script src="js/comment.js"></script>
+                
+            <figure class="gallery-img"><a href="img/gallery2.jpg"><img src="img/gallery2.jpg" width="965px" height="650px"></img></a>
+           </figure>
+           
+           <section id="komentari">
+            <div class="container">
+              <div class="box-com">
+                <i class="fa fa-thumbs-up" id="like"></i>
+                <span id="like-counter">0</span>
+              </div>
+              <div class="box-com">
+                <i class="fa fa-heart" id="love"></i>
+                <span id="love-counter">0</span>
+              </div>
+              <div class="box-com">
+                <i class="fa fa-comment"></i>
+                <span id="comment-counter">0</span>
+              </div>
+              <div class="box-com">
+                <input type="text" placeholder="Напишете коментар..." id="comment" style="font-size: 14px;">
+                <button class="add-comment" style="border: none;"><i class="fa fa-send"></i></button>
+              </div>
+              <section class="comments" id="comments-container"></section>
+            </div>
+          </section>
+          <script src="js/comment.js"></script>
+    
+            <figure class="gallery-img"><a href="img/gallery3.jpg"><img src="img/gallery3.jpg" width="965px" height="650px"></img></a>
             </figure> 
 
-            <figure class="gallery-img"><a href="img/gallery4.jpg"><img src="img/gallery4.jpg" width="250px" height="150px"></img></a>
-              <figcaption><h2 style="margin-top: 2%;"><i class="fa fa-heart"></i><i class="fa fa-comment"></i></h2>
-              </figcaption>
-            </figure>
+            
+            <section id="komentari">
+              <div class="container">
+                <div class="box-com">
+                  <i class="fa fa-thumbs-up" id="like"></i>
+                  <span id="like-counter">0</span>
+                </div>
+                <div class="box-com">
+                  <i class="fa fa-heart" id="love"></i>
+                  <span id="love-counter">0</span>
+                </div>
+                <div class="box-com">
+                  <i class="fa fa-comment"></i>
+                  <span id="comment-counter">0</span>
+                </div>
+                <div class="box-com">
+                  <input type="text" placeholder="Напишете коментар..." id="comment" style="font-size: 14px;">
+                  <button class="add-comment" style="border: none;"><i class="fa fa-send"></i></button>
+                </div>
+                <section class="comments" id="comments-container"></section>
+              </div>
+            </section>
+            <script src="js/comment.js"></script>
 
-            <figure class="gallery-img"><a href="img/gallery5.jpg"><img src="img/gallery5.jpg" width="250px" height="150px"></img></a>
-              <figcaption><h2 style="margin-top: 2%;"><i class="fa fa-heart"></i><i class="fa fa-comment"></i></h2>
-              </figcaption>
+            <figure class="gallery-img"><a href="img/gallery5.jpg"><img src="img/gallery5.jpg" width="965px" height="650px"></img></a>
               </figure>
+            
+              
+              <section id="komentari">
+                <div class="container">
+                  <div class="box-com">
+                    <i class="fa fa-thumbs-up" id="like"></i>
+                    <span id="like-counter">0</span>
+                  </div>
+                  <div class="box-com">
+                    <i class="fa fa-heart" id="love"></i>
+                    <span id="love-counter">0</span>
+                  </div>
+                  <div class="box-com">
+                    <i class="fa fa-comment"></i>
+                    <span id="comment-counter">0</span>
+                  </div>
+                  <div class="box-com">
+                    <input type="text" placeholder="Напишете коментар..." id="comment" style="font-size: 14px;">
+                    <button class="add-comment" style="border: none;"><i class="fa fa-send"></i></button>
+                  </div>
+                  <section class="comments" id="comments-container"></section>
+                </div>
+              </section>
+              <script src="js/comment.js"></script>
 
-              <figure class="gallery-img"><a href="img/gallery6.jpg"><img src="img/gallery6.jpg" width="250px" height="150px"></img></a>
-                <figcaption><h2 style="margin-top: 2%;"><i class="fa fa-heart"></i><i class="fa fa-comment"></i></h2>
-                </figcaption>
+              <figure class="gallery-img"><a href="img/gallery6.jpg"><img src="img/gallery6.jpg" width="965px" height="650px"></img></a>
                 </figure>
+
+                
+              <section id="komentari">
+                <div class="container">
+                  <div class="box-com">
+                    <i class="fa fa-thumbs-up" id="like"></i>
+                    <span id="like-counter">0</span>
+                  </div>
+                  <div class="box-com">
+                    <i class="fa fa-heart" id="love"></i>
+                    <span id="love-counter">0</span>
+                  </div>
+                  <div class="box-com">
+                    <i class="fa fa-comment"></i>
+                    <span id="comment-counter">0</span>
+                  </div>
+                  <div class="box-com">
+                    <input type="text" placeholder="Напишете коментар..." id="comment" style="font-size: 14px;">
+                    <button class="add-comment" style="border: none;"><i class="fa fa-send"></i></button>
+                  </div>
+                  <section class="comments" id="comments-container"></section>
+                </div>
+              </section>
+              <script src="js/comment.js"></script>
+
           </div>
         </div>
     </section>
-
+    
     <!--==========================
       Blog
     ============================-->
     <section id="blog">
         <div class="section-header">
           <h3 class="section-title">Блог</h3>
+
+          
+      <div class="box-blog">
+        <h3>Изразете се слободно и без цензура на мојот блог</h3>
+        <input type="text" placeholder="Наслов" id="naslov"><br>
+        <input type="text" placeholder="Име и презиме" id="imeprezime"><br>
+        <textarea id="tekst" placeholder="Вашиот есеј" cols=77 rows="10"></textarea>
+        <p><button class="add-text">Објави</button></p>
+      </div>
+
+      <div class="box-blog">
+        <section class="title" id="title"></section>
+        <section class="datum" id="datum"></section>
+        <section class="author" id="author"></section>  
+        <section class="esej" id="esej"></section> 
+      </div>
+    <script src="js/blog.js"></script>
+
           <div class="box-blog">
             <h3>Маските не се вашиот непријател!</h3>
             <h6>Среда, 21 октомври 2020</h6>
@@ -188,9 +320,7 @@
           <a style="color:#2dc997;" href="https://respublica.edu.mk/mk/blog/2019-12-25-09-19-18">Прочитај повеќе</a></b>
           </p>
       </div>
-
-        
-        </div>
+      
     </section>
 
     <!--=========================
@@ -203,7 +333,7 @@
           <div class="row justify-content-center">
             <iframe width="220px" height="160" src="https://youtube.com/embed/kPQGWVIt0XE"></iframe>
             <iframe width="220px" height="160" src="https://youtube.com/embed/fPO76Jlnz6c"></iframe>
-            <iframe width="220px" height="160" src="https://youtube.com/embed/fOg7mj1_-sk"></iframe>
+            <iframe width="220px" height="160" src="https://youtube.com/embed/W3q8Od5qJio"></iframe>
             <iframe width="220px" height="160" src="https://youtube.com/embed/6hzrDeceEKc"></iframe>
             <iframe width="220px" height="160" src="https://youtube.com/embed/TfzGsgj5eRc"></iframe>
            </div>
@@ -331,9 +461,9 @@
           </div>
         </div>
     </section>
-
-
-    <!--==========================
+  
+  
+      <!--==========================
       Contact
     ============================-->
     <section id="contact">
@@ -414,20 +544,13 @@
     Footer
   ============================-->
   <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-
-      </div>
-    </div>
-
-    <div class="container">
+    <div class="footer-top"></div>
       <div class="copyright">
         &copy; Copyright <strong>MartinaJo</strong>. All Rights Reserved
       </div>
       <div class="credits">
         Designed by MartinaJo
       </div>
-    </div>
   </footer>
 </body>
 </html>

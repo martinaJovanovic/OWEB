@@ -39,6 +39,7 @@ h1, h2, h3, h4, h5, h6 {
 #header #logo {
   float: left;
   padding: 0;
+  margin-left: 10%;
   vertical-align: middle;
 }
 
@@ -76,7 +77,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
 }
 
-#doma .doma-container {
+#doma .doma {
   position: absolute;
   bottom: 0;
   top: 0;
@@ -123,7 +124,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-menu, .nav-menu * {
   margin: 0;
-
   padding: 0;
   list-style: none;
 }
@@ -167,13 +167,13 @@ h1, h2, h3, h4, h5, h6 {
   min-width: 180px;
 }
 
-#nav-menu-container {
+#nav-menu {
   float: right;
   margin: 0;
 }
 
 @media (max-width: 768px) {
-  #nav-menu-container {
+  #nav-menu {
     display: none;
   }
 }
@@ -286,6 +286,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #333;
   font-weight: 700;
   font-size: 32px;
+  padding-top: 15px;
 }
 
 @media (max-width: 768px) {
@@ -297,6 +298,7 @@ h1, h2, h3, h4, h5, h6 {
 #about .about-container p {
   line-height: 26px;
   text-align: justify;
+  padding-right: 50px;
 }
 
 #about .about-container p:last-child {
@@ -504,8 +506,9 @@ h1, h2, h3, h4, h5, h6 {
 
   figure{
     padding: 40px;
+    padding-bottom: 0%;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
   }
 
   #muzika
@@ -548,5 +551,136 @@ i
 }
 
 
+#komentari {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  margin: auto;
+}
+#komentari .content {
+  width: 100%;
+  max-height: 400px;
+}
 
+.container {
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 20px;
+  width: 100%;
+  padding: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
 
+.container .box-com {
+  width: 10%;
+}
+
+.container .box-com:last-of-type {
+  width: calc(100% - 40%);
+  display: flex;
+  justify-content: space-between;
+}
+
+.container .comments {
+  width: 100%;
+  font-size: 14px;
+}
+
+.container .comments div {
+  color: black;
+  background: #ebebeb;
+  margin-top: 20px;
+  padding: 25px 35px;
+  position: relative;
+}
+.container .comments div span {
+  font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  color: #555;
+  right: 15px;
+}
+.container .comments div i {
+  font-size: 20px;
+  color: #526b7e;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: all .5s;
+}
+
+.container .comments div i:hover {
+  color: #2dc997;
+}
+
+.container .box-com input {
+  width: 80%;
+  border: none;
+  padding: 10px;
+  border-radius:2%
+
+}
+
+.container .box-com button {
+  width: 10%;
+  background: none;
+  border: 1px solid #fff;
+  cursor: pointer;
+  color: #fff;
+  transition: all .5s;
+}
+
+.container .box-com button:hover {
+  background:#2dc997;
+  border: 1px solid #3f4c6b;
+}
+
+.box-com i {
+  cursor: pointer;
+  transition: all .5s;
+  font-size: 23px;
+}
+
+.like {
+  color: #5691c8;
+  transform: scale(1.2);
+}
+
+.love {
+  color: #c31432;
+  transform: scale(1.2);
+}
+
+.box-blog button 
+{
+  background: #2dc997;
+  border: 0;
+  padding: 10px 24px;
+  margin: 10px;
+  color: #fff;
+}
+
+.box-blog button :hover
+{
+  background:#2dc997;
+  color:#fff
+}
+
+.box-blog input
+{
+  box-shadow: none;
+  width: 69%;
+  margin: 10px;
+  padding: 2px;
+}
+
+.box-blog textarea
+{
+  margin: 10px;
+  padding: 5px;
+}
