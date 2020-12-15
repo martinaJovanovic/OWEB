@@ -9,34 +9,12 @@ addavtor = imeprezime.nextElementSibling,
 addnaslov = naslov.nextElementSibling,
 datum = document.getElementById("datum");
 adddatum = datum.nextElementSibling;
-
-const months = [
-    'јануари',
-    'февруари',
-    'март',
-    'април',
-    'мај',
-    'јуни',
-    'јули',
-    'август',
-    'септември',
-    'октомври',
-    'ноември',
-    'декември'
-  ]
-
-  const days = [
-    'Недела',
-    'Понеделник',
-    'Вторник',
-    'Седа',
-    'Четврток',
-    'Петок',
-    'Саботa'
-  ]
+novEsej = document.getElementById("novEsej")
+novEsej.style.display = "none";
 
   addtekst.addEventListener("click", function()
   {
+    novEsej.style.display="block";
     var d = new Date ();
     var months = ["јануари","февруари","март","април","мај","јуни","јули","август","септември","октомври","ноември","декември"];
     var days = ["Недела", "Понеделник", "Вторник", "Среда", "Четврток", "Петок", "Сабота"];  
@@ -52,7 +30,7 @@ const months = [
      naslov.value = "";
 
      author.style.display = "block";
-      author.innerHTML =
+     author.innerHTML =
       `<div>
       <h6>Автор: ${imeprezime.value}</h6>
       </div>`;
