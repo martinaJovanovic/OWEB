@@ -12,6 +12,7 @@ adddatum = datum.nextElementSibling;
 novEsej = document.getElementById("novEsej")
 novEsej.style.display = "none";
 
+
   addtekst.addEventListener("click", function()
   {
     novEsej.style.display="block";
@@ -30,7 +31,7 @@ novEsej.style.display = "none";
      naslov.value = "";
 
      author.style.display = "block";
-     author.innerHTML =
+      author.innerHTML =
       `<div>
       <h6>Автор: ${imeprezime.value}</h6>
       </div>`;
@@ -43,8 +44,3 @@ novEsej.style.display = "none";
         </div>`;
     tekst.value = "";
   });
-
-
-
-
-
